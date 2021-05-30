@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://timetableEdit.caption"
+        focusComponent="form"
+        messagesPack="com.company.untitled.web.screens.timetable">
+    <data>
+        <instance id="timetableDc"
+                  class="com.company.untitled.entity.Timetable">
+            <view extends="_local"/>
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="timetableDc">
+            <column width="350px">
+                <lookupField id="dayOfWeekField" property="dayOfWeek"/>
+                <textField id="eventField" property="event"/>
+                <textField id="startTimeField" property="startTime"/>
+                <textField id="endTimeField" property="endTime"/>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>
